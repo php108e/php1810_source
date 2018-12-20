@@ -28,6 +28,7 @@
 			//Cap phien lam viec cho user
 			$_SESSION['login'] 		= $user;
 			$_SESSION['loggedin'] 	= true;
+			
 			//dieu huong ve index
 			header("location:index.php");
 			
