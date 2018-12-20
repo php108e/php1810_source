@@ -28,6 +28,8 @@
 			//Cap phien lam viec cho user
 			$_SESSION['login'] 		= $user;
 			$_SESSION['loggedin'] 	= true;
+			setcookie('user',$user,time()+3600);
+			setcookie('pass',$pass,time()+3600);
 			//dieu huong ve index
 			header("location:index.php");
 			
