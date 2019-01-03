@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trang Sản phẩm</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'>
+
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/category.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript">
+
+	</script>
+</head>
+<body>
+	<div id="header" class="container-fluid">
+		<div id="top-nav" class="container-fluid">
+			<div id="top-nav-content" class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<a href="index.html" class="btn btn-danger" style="background-color: #fff; color: #709b1d;border: none; font-weight: bold;">
+							<span class="glyphicon glyphicon-home"></span>
+							Home
+						</a>
+
+						<a href="#">
+							<span class="glyphicon glyphicon-user"></span> My Account
+						</a>
+
+						<a href="#">
+							<span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+						</a>
+
+						<a href="#">
+							<span class="glyphicon glyphicon-ok"></span> Checkout
+						</a>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="top-nav-logo" class="container">
+				<div class="row">
+					<div class="col-xs-4">
+						<a href="index.html"><img src="images/logo.jpg" alt="electronic"></a>
+					</div>
+					<div class="col-xs-8" style="text-align:right;">
+						<a href="#">LOGIN</a> or
+						<a href="#">CREATE ACCOUNT</a>
+
+						<a href="#" class='bt'>
+							<span class="glyphicon glyphicon-edit"></span>
+							<span class='txt'>20</span>
+						</a>
+						
+						<a href="#" class='bt'>
+							<span class="glyphicon glyphicon-shopping-cart"></span>
+							<span class='txt'>3</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--end #header-->
+
+	<div id="top-nav-menu">
+		<nav class="navbar navbar-inverse container">
+		  <div class="container-fluid">
+		    <ul class="nav navbar-nav">
+		      <li><a href="#">smart phone</a></li>
+		      <li><a href="#">labtop</a></li>
+		      <li><a href="#">desktop</a></li>
+		      <li><a href="#">accesories</a></li>
+		      <li><a href="#">networking</a></li>
+		      <li><a href="#">software</a></li>
+		    </ul>
+		    <form class="navbar-form navbar-right" action="/action_page.php">
+		      <div class="form-group">
+		        <input type="text" class="form-control" placeholder="Search your item ..." name="search">
+		      </div>
+		      <button type="submit" class="btn" style="color: #fff; background-color: #709b1d;">
+		      	<span class="glyphicon glyphicon-search"></span>
+		      </button>
+		    </form>
+		  </div>
+		</nav><!--end .navbar-->
+	</div>
+
+	<div id="path" class="container">
+		<div id="path-title">Home / Checkout Infomation</div> 
+	</div>
+
+	<div id="content" class="container">
+		<div class="row">
+			<div class="col-xs-9">
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="checkout-title">
+							<h4>Checkout Information</h4>
+						</div>
+						<div class="checkout-step">
+							<b>STEP 1:</b> Check Out Information
+						</div>
+						<div id="checkout-customer-form" class="row">
+							<div class="col-xs-6">
+								<div class="form-title">NEW CUSTOMER</div>
+								<div style="margin-bottom: 5px;">Checkout option</div>
+								<form action="" method="" class="frm-checkout">
+									<input type="radio" name="rboption" checked="true"> REGISTER ACCOUNT<br>
+									<input type="radio" name="rboption"> GUEST ACCOUNT <br>
+									Lorem Ipsum is simply dummy<br>
+									<input type="submit" name="btnContinue" value="CONTINUE" class="btn btn-default" style="background-color: #709b1d;color: #fff;">
+								</form>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-title">RETURNING CUSTOMER</div>
+								<div style="margin-bottom: 5px;">I'm a returning customer</div>
+								<form action="" method="" class="frm-checkout">
+									<label>Email (*)</label><input type="text" name="txtEmail"><br>
+									<label>Password (*)</label><input type="text" name="txtPassword"><br>
+									<div style="margin-top: -10px;">Forgot your password?</div>
+									<div style="text-align: right;"><input type="submit" name="btnContinue" value="LOG IN" class="btn btn-default" style="background-color: #709b1d;color: #fff;"></div>
+								</form>
+							</div>
+						</div>
+						<div class="checkout-step">
+							<b>STEP 2:</b> Billing Information
+						</div>
+						<div class="checkout-infor">
+							<div class="row">
+								<form action="" method="">
+									<div class="col-xs-6" style="padding-left: 25px;">
+										<div class="checkout-infor-table">
+											<div class="table">
+												<tr>
+													Full Name
+													<input type="text" name="txtFullName" class="form-control">
+												</tr>
+												<tr>
+													Company Name
+													<input type="text" name="txtCompanyName" class="form-control">
+												</tr>
+												<tr>
+													Phone
+													<input type="text" name="txtPhone" class="form-control">
+												</tr>
+												<tr>
+													Tax Code
+													<input type="text" name="txtPhone" class="form-control">
+												</tr>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="checkout-infor-table">
+											<div class="table">
+												<tr>
+													Address
+													<textarea name="txtFullName" class="form-control"></textarea>
+												</tr>
+												<tr>
+													City
+													<select name="cbCity" class="form-control">
+														<option value="HN">Hà Nội</option>
+														<option value="TPHCM">TP. Hồ Chí Minh</option>
+													</select>
+												</tr>
+												<tr>
+													Province
+													<select name="cbProvince" class="form-control">
+														<option value="CG">Cầu Giấy</option>
+														<option value="NTL">Nam Từ Liêm</option>
+													</select>
+												</tr>											
+											</div>
+											<div style="text-align: right;margin-top: 45px;">
+												<input type="submit" name="btnSaveBillInfor" value="Save" class="btn btn-default form-control" style="background-color: #709b1d;color: #fff;width: 100px;">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="checkout-step">
+							<b>STEP 3:</b> Delivery Information
+						</div>
+						<div class="checkout-infor">
+							<div class="row">
+								<form action="" method="">
+									<div class="col-xs-6" style="padding-left: 25px;">
+										<div class="checkout-infor-table">
+											<div class="table">
+												<tr>
+													Recipient's Name
+													<input type="text" name="txtFullName" class="form-control">
+												</tr>
+												<tr>
+													Recipient's Phone
+													<input type="text" name="txtPhone" class="form-control">
+												</tr>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<div class="checkout-infor-table">
+											<div class="table">
+												<tr>
+													Recipient's Address
+													<textarea name="txtFullName" class="form-control"></textarea>
+												</tr>
+												<tr>
+													Recipient's City
+													<select name="cbCity" class="form-control">
+														<option value="HN">Hà Nội</option>
+														<option value="TPHCM">TP. Hồ Chí Minh</option>
+													</select>
+												</tr>
+												<tr>
+													Recipient's Province
+													<select name="cbProvince" class="form-control">
+														<option value="CG">Cầu Giấy</option>
+														<option value="NTL">Nam Từ Liêm</option>
+													</select>
+												</tr>											
+											</div>
+											<div style="text-align: right;margin-top: 45px;">
+												<input type="submit" name="btnSaveBillInfor" value="Save" class="btn btn-default form-control" style="background-color: #709b1d;color: #fff;width: 100px;">
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="checkout-step">
+							<b>STEP 4:</b> Payment Methods
+							<ul class="nav nav-tabs">
+							    <li class="active"><a data-toggle="tab" href="#home"><i style='font-size:24px' class='far'>&#xf3d1;</i> Cash on Delivery</a></li>
+							    <li><a data-toggle="tab" href="#menu1"><i style='font-size:24px' class='fas'>&#xf53d;</i> Credit/Debit Card</a></li>
+							    <li><a data-toggle="tab" href="#menu2"><i style='font-size:24px' class='fas'>&#xf26c;</i> Local ATM Card</a></li>
+							</ul>
+
+							<div class="tab-content">
+							    <div id="home" class="tab-pane fade in active">
+							      <h3></h3>
+							      <p>You can pay in cash to our courier when you receive the goods at your doorstep.</p>
+							      <p><input type="submit" name="btnConfirmOrder" value="Confirm Order" class="btn btn-default form-control" style="background-color: #709b1d;color: #fff;width: 150px; margin-bottom: 30px;"></p>
+							    </div>
+							    <div id="menu1" class="tab-pane fade">
+							      <h3></h3>
+							      <p>
+							      		<div class="checkout-infor-table">
+											<span style="display: inline-block;width: 150px;">* Card Number</span>
+											<input type="text" name="txtCardNumber" placeholder="Input Card Number"><br>
+											<span style="display: inline-block;width: 150px;">* Name On Card</span>
+											<input type="text" name="txtNameOnCard" placeholder="Input Name on Card"><br>
+											<span style="display: inline-block;width: 150px;">* Expiration date</span>
+											<input type="text" name="txtExpiration" placeholder="MM/YY">
+											*CVV  <input type="text" name="txtCVV" style="width: 100px;" placeholder="CVV"><br>
+											<input type="checkbox" name="chkSaveCard" checked="true"> Save Card (Information is encrypted and securely stored)
+										</div>
+										<p><input type="submit" name="btnPlaceOrder" value="Place Order" class="btn btn-default form-control" style="background-color: #709b1d;color: #fff;width: 150px; margin-bottom: 20px;margin-top: 30px;"></p>
+							      </p>
+							    </div>
+							    <div id="menu2" class="tab-pane fade">
+							      <h3></h3>
+							      <p>
+							      	Awesome! Please have these ready:<br>
+									1. ATM card<br>
+									2. Registered for ONLINE PAYMENT SERVICE and/or INTERNET BANKING<br>
+									3. Account balance LARGER THAN value of your order<br>
+							      </p>
+							      <p><input type="submit" name="btnPlaceOrder" value="Place Order" class="btn btn-default form-control" style="background-color: #709b1d;color: #fff;width: 150px; margin-bottom: 30px;"></p>
+							    </div>
+							</div>
+						</div>
+						<div class="checkout-step">
+							<b>STEP 5:</b> Confirm Order
+						</div>
+						<div>
+							<h3><i class="material-icons">&#xe192;</i> Thank you for your purchase!</h3>
+							<h4>Your number is 123456 TRACK ORDER</h4>
+							You can track and manage your order at My Account > My Order
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-3">
+				<div class="row">
+					<div id="content-right" class="col-xs-12">
+						<div class="content-right-title">CATEGORY</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">Smart phone</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">Desktop</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">Labtop</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">Accessories</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">Software</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">Networking</a></li>
+							</ul>
+						</div>
+						<div class="content-right-title">BY BRAND</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><input type="checkbox" name="brand[]"> HP</li>
+								<li><input type="checkbox" name="brand[]"> DELL</li>
+								<li><input type="checkbox" name="brand[]"> APPLE</li>
+								<li><input type="checkbox" name="brand[]"> ASUS</li>
+								<li><input type="checkbox" name="brand[]"> SAMSUNG</li>
+								<li><input type="checkbox" name="brand[]"> TOSHIBA</li>
+							</ul>
+						</div>
+						<div class="content-right-title">BY PRICE</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#"> $1000 - $2000</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#"> $2000 - $3000</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#"> $3000 - $4000</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#"> $4000 - $5000</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#"> $5000 - $6000</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#"> $6000 - $7000</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--end #content-->
+
+	<div id="site-info" class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-3">
+					<div class="site-info-block">
+						<span class="glyphicon glyphicon-send" style="font-size: 23px;"></span>&nbsp;&nbsp;
+						First Shipping
+					</div>
+				</div>
+				
+				<div class="col-xs-3">
+					<div class="site-info-block">
+						<span class="glyphicon glyphicon-lock" style="font-size: 23px;"></span>&nbsp;&nbsp;
+						Secure Store
+
+					</div>
+				</div>
+
+				<div class="col-xs-3">
+					<div class="site-info-block">
+						<span class="glyphicon glyphicon-time" style="font-size: 23px;"></span>&nbsp;&nbsp;
+						Save Time
+					</div>
+				</div>
+				
+				<div class="col-xs-3">
+					<div class="site-info-block">
+						<span class="glyphicon glyphicon-shopping-cart" style="font-size: 23px;"></span>&nbsp;&nbsp;
+						Pay on Delivery
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div><!--end #site-info-->
+
+	<div id="brand" class="container">
+		<div class="row">
+			<div class="col-xs-12"><span>OUR BRAND</span></div>
+		</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-xs-2">
+				<div class="brand-item"><img src="images/brand.jpg" width="100%" height="38px"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="brand-item"><img src="images/brand.jpg" width="100%" height="38px"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="brand-item"><img src="images/brand.jpg" width="100%" height="38px"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="brand-item"><img src="images/brand.jpg" width="100%" height="38px"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="brand-item"><img src="images/brand.jpg" width="100%" height="38px"></div>
+			</div>
+			<div class="col-xs-2">
+				<div class="brand-item"><img src="images/brand.jpg" width="100%" height="38px"></div>
+			</div>
+
+		</div>
+	</div><!--end #brand-->
+
+	<div id="footer">
+		<div class="container-fluid" id="footer-link">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="footer-link-title">INFOMATION</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">ABOUT US</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CUSTOMER SEVICE</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">PRIVACY POLICY</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">SITE MAP</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CONTACT</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="footer-link-title">INFOMATION</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">ABOUT US</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CUSTOMER SEVICE</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">PRIVACY POLICY</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">SITE MAP</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CONTACT</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="footer-link-title">INFOMATION</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">ABOUT US</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CUSTOMER SEVICE</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">PRIVACY POLICY</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">SITE MAP</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CONTACT</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-xs-3">
+						<div class="footer-link-title">INFOMATION</div>
+						<div class="footer-link-content">
+							<ul>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">ABOUT US</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CUSTOMER SEVICE</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">PRIVACY POLICY</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">SITE MAP</a></li>
+								<li><span class="glyphicon glyphicon-play"></span><a href="#">CONTACT</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid" id="footer-credit"></div>
+		<div class="container-fluid" id="footer-copyright">Copyright: ABC-Corporation</div>
+	</div><!--end #footer-->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
