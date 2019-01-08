@@ -15,16 +15,8 @@
 		$pass = $_POST['txtPass'];
 		
 		//Kiem tra su ton tai cua nguoi dung trong mang $account
-		$status = 0;
-		foreach ($account as $key => $value) {
-			if ($user == $key && $pass == $value){
-				$status = 1; break;
-			}else{
-				$status = 0;
-			}
-		}
-
-		if($status == 1){
+		include "lish.php";
+		if(checkLogin($pass, $user, $account)==1){
 			//Cap phien lam viec cho user
 			$_SESSION['login'] 		= $user;
 			$_SESSION['loggedin'] 	= true;
