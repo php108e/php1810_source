@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `Ecommerce_Example`
 --
-
+CREATE DATABASE PHP_1018E;
 -- --------------------------------------------------------
 
 --
