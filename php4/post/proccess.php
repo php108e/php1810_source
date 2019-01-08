@@ -14,6 +14,9 @@
 		$user = $_POST['txtUser'];
 		$pass = $_POST['txtPass'];
 		
+
+		require("lib.php");// OR Include
+
 		//Kiem tra su ton tai cua nguoi dung trong mang $account
 		$status = 0;
 		foreach ($account as $key => $value) {
