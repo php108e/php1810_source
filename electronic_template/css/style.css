@@ -1,0 +1,46 @@
+/*CHECKOUT PAGE*/
+#checkout-title{
+	border-bottom: 1px solid #c9c9c9;
+}
+
+.checkout-step{
+	margin-top: 20px;
+	background-color: #eeeeee;
+	line-height: 30px;
+	padding-left: 10px;
+	margin-bottom: 20px;
+}
+#checkout-customer-form{
+	margin-top: 20px;
+	padding-left: 10px;
+}
+.frm-checkout{
+	line-height: 40px;
+}
+.form-title{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#checkout-customer-form label{
+	font-weight: normal;
+	width: 100px;
+}
+#checkout-customer-form input[type='text']{
+	line-height: 15px;
+	width: 75%;
+}
+
+#checkout-customer-form input[type='submit']{
+	width: 100px;
+}
+.checkout-infor input[type='sumit']{
+	width: 100px;
+}
+
+.checkout-infor-table input[type='text']{
+	margin-bottom: 20px;
+}
+.checkout-infor-table select{
+	margin-bottom: 20px;
+}
