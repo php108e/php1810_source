@@ -6,10 +6,10 @@
 </head>
 <body>
 	<?php
+	require "database.php";
 	//Kiểm tra xem người dùng có submit dữ liệu lên server không
 	if(isset($_POST['btnCreate'])){
 		//Bước 1: Khởi tạo đối tượng CSDL cần thao tác
-		require "database.php";
 		//Bước 2: Tạo truy vấn theo chức năng tương ứng
 		$sql = "INSERT INTO products SET ProductName=? ,UnitPrice=? ,QuantityPerUnit=? ,Description=? ,SupplierID=? ,CategoryID=?";
 
@@ -26,7 +26,8 @@
 
 		//Bước 5: Thực thi câu truy vấn
 		if($stmt->execute()==true){
-			echo "<div class='alert alert-success'>Thêm mới thành công.</div>";
+			echo "<script>alert('Thêm mới thành công');</script>";
+			header('location:index.php');
 		}else{
 			echo "<div class='alert alert-danger'>Thêm mới thất bại.</div>";
 		}
@@ -59,21 +60,44 @@
 					</td>
 				</tr>
 				<tr>
+
 					<td>Nhà cung cấp</td>
 					<td>
+						<?php
+							$sql1 = "SELECT SupplierID, CompanyName FROM Suppliers";
+							$stmt1 = $db->prepare($sql1);
+							$stmt1->execute();
+							$count1 = $stmt1->rowCount();
+						?>
 						<select name="cbSupplier" class="form-control">
-							<option value="1">Apple</option>
-							<option value="2">Sony</option>
+							<?php
+								if($count1>0){
+									while($s = $stmt1->fetch(PDO::FETCH_ASSOC)){
+										echo '<option value ="'.$s['SupplierID'].'">'.$s['CompanyName'].'</option>';
+									}
+								}
+							?>
 						</select>
+							
 					</td>
 				</tr>
 				<tr>
 					<td>Danh mục</td>
 					<td>
+						<?php
+							$sql2 = "SELECT CategoryID, CategoryName FROM categories";
+							$stmt2 = $db->prepare($sql2);
+							$stmt2->execute();
+							$count2 = $stmt2->rowCount();
+						?>
 						<select name="cbCategory" class="form-control">
-							<option value="1">Smart phone</option>
-							<option value="3">Destop</option>
-							<option value="4">Accessories</option>
+							<?php
+								if($count2>0){
+									while($s = $stmt2->fetch(PDO::FETCH_ASSOC)){
+										echo '<option value = "'.$s['CategoryID'].'">'.$s['CategoryName'].'</option>';
+									}
+								}
+							?>
 						</select>
 					</td>
 				</tr>
