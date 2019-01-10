@@ -6,10 +6,11 @@
 </head>
 <body>
 	<?php
+	require "database.php";
 	//Kiểm tra xem người dùng có submit dữ liệu lên server không
 	if(isset($_POST['btnCreate'])){
 		//Bước 1: Khởi tạo đối tượng CSDL cần thao tác
-		require "database.php";
+		
 		//Bước 2: Tạo truy vấn theo chức năng tương ứng
 		$sql = "INSERT INTO products SET ProductName=? ,UnitPrice=? ,QuantityPerUnit=? ,Description=? ,SupplierID=? ,CategoryID=?";
 
@@ -26,7 +27,8 @@
 
 		//Bước 5: Thực thi câu truy vấn
 		if($stmt->execute()==true){
-			echo "<div class='alert alert-success'>Thêm mới thành công.</div>";
+			//echo "<script>alert('Thêm mới thành công');</script>";
+			header("location:index.php");
 		}else{
 			echo "<div class='alert alert-danger'>Thêm mới thất bại.</div>";
 		}
@@ -60,10 +62,22 @@
 				</tr>
 				<tr>
 					<td>Nhà cung cấp</td>
+					<?php
+						$sql1 = "SELECT SupplierID, CompanyName FROM suppliers";
+
+						$stmt1 = $db->prepare($sql1);
+						$stmt1->execute();
+						$count1 = $stmt1->rowCount();
+					?>
 					<td>
 						<select name="cbSupplier" class="form-control">
-							<option value="1">Apple</option>
-							<option value="2">Sony</option>
+						<?php
+						if($count1>0){
+							while($s = $stmt1->fetch(PDO::FETCH_ASSOC)){
+								echo '<option value="'.$s['SupplierID'].'">'.$s['CompanyName'].'</option>';
+							}
+						}
+						?>
 						</select>
 					</td>
 				</tr>

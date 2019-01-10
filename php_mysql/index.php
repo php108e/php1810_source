@@ -22,7 +22,15 @@
 		//Biểu diễn dữ liệu
 		?>
 		<div class="container">
-			<h3 class="page-header">Danh sach san pham</h3>
+			<div class="row page-header">
+				<div class="col-xs-6">
+					<h4>Danh sach san pham</h4>
+				</div>
+				<div class="col-xs-6" style="text-align: right;">
+					<a href="create.php" class="btn btn-success">Thêm mới</a>
+				</div>
+			</div>
+
 			<table class="table table-hover table-bordered table-responsive">
 				<tr>
 					<th>Ten</th><th>Gia</th><th>So luong nhap kho</th><th>Chuc nang</th>
