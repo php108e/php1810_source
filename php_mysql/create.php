@@ -83,11 +83,22 @@
 				</tr>
 				<tr>
 					<td>Danh mục</td>
+					<?php
+						$sql2 = "SELECT * FROM categories";
+
+						$stmt2 = $db->prepare($sql2);
+						$stmt2->execute();
+						$count2 = $stmt2->rowCount();
+					?>
 					<td>
 						<select name="cbCategory" class="form-control">
-							<option value="1">Smart phone</option>
-							<option value="3">Destop</option>
-							<option value="4">Accessories</option>
+						<?php
+						if($count2>0){
+							while($s1 = $stmt2->fetch(PDO::FETCH_ASSOC)){
+								echo '<option value="'.$s1['CategoryID'].'">'.$s1['CategoryName'].'</option>';
+							}
+						}
+						?>
 						</select>
 					</td>
 				</tr>
