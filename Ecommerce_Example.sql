@@ -22,6 +22,7 @@ SET time_zone = "+00:00";
 -- Cơ sở dữ liệu: `Ecommerce_Example`
 --
 
+CREATE DATABASE phpcomer;
 -- --------------------------------------------------------
 
 --
@@ -342,3 +343,17 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+VALUES(1,'Laptop','Máy tính xách tách');
+
+INSERT INTO categories(categoryID,categoryName,Description)
+VALUES(1,'Destop','Máy tính để bàn');
+
+INSERT INTO categories(categoryID,categoryName,Description)
+VALUES(1,'Accessories','Phụ kiện công nghệ');
+
+INSERT INTO categories(categoryID,categoryName,Description)
+VALUES(1,'Networking','Thiết bị mạng');
+
+INSERT INTO SET categoryName='software', Description='Phần mềm ứng dụng';)
+
