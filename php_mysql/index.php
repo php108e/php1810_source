@@ -3,6 +3,16 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script type="text/javascript">
+		function xoa(id){
+			var result = window.confirm("Bạn có chắc muốn xoá sản phẩm có mã: "+id);
+			if(result==true){
+				window.location.href= "delete.php?id="+id;
+			}
+		}
+	</script>
+	
 </head>
 <body>
 
@@ -44,8 +54,9 @@
 				echo "<td>".$row['UnitPrice']."</td>";
 				echo "<td>".$row['QuantityPerUnit']."</td>";
 				echo "<td>";
+					$id = $row['ProductID'];
 					echo "<a href='update.php?id=".$row['ProductID']."'>Sua</a>";
-					echo "<a href='delete.php?id=".$row['ProductID']."'>Xoa</a>";
+					echo "<a href='#' onclick='xoa(".$id.");'>Xoa</a>";
 				echo "</td>";
 			echo "</tr>";
 		}
