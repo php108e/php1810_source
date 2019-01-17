@@ -31,15 +31,34 @@
 		<div class="container">
 			<div class="row page-header">
 				<div class="col-xs-6">
+<<<<<<< HEAD
 					<h4>Danh sách sản phẩm</h4>
+=======
+<<<<<<< HEAD
+					<h3 class="page-header">Danh sach san pham</h3>
+				</div>
+				<div class="col-xs-6">
+					<a href="create.php " class="
+					btn btn-success">Thêm mới</a>
+				</div>
+			</div>
+			
+=======
+					<h4>Danh sach san pham</h4>
+>>>>>>> 7cd1f43bf1f033e678ee0467ec406d367416e188
 				</div>
 				<div class="col-xs-6" style="text-align: right">
 					<a href="create.php" class="btn btn-success">Thêm mới</a>
 				</div>
 			</div>
 
+<<<<<<< HEAD
 			
 			<table class="table table-responsive table-bordered table-hover">
+=======
+>>>>>>> a8e466ec6ac4f70e87000bbbb7c8026ff2ac5750
+			<table class="table table-hover table-bordered table-responsive">
+>>>>>>> 7cd1f43bf1f033e678ee0467ec406d367416e188
 				<tr>
 					<th>Tên</th>
 					<th>Giá</th>
