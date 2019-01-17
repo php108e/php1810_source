@@ -12,10 +12,26 @@
 		//Bước 1: Khởi tạo đối tượng CSDL cần thao tác
 		
 		//Bước 2: Tạo truy vấn theo chức năng tương ứng
-		$sql = "INSERT INTO products SET ProductName=? ,UnitPrice=? ,QuantityPerUnit=? ,Description=? ,SupplierID=? ,CategoryID=?";
+		$sql = "INSERT INTO products SET ProductName=? ,UnitPrice=? ,QuantityPerUnit=? ,Description=? ,SupplierID=? ,CategoryID=?, Image=?";
 
 		//Bước 3: Tiến hành Prepare câu truy vấn
 		$stmt = $db->prepare($sql);
+
+		$filesName 	= $_FILES['txtFile']['name']; 
+		$filesType 	= $_FILES['txtFile']['type'];
+		$filesTmp 	= $_FILES['txtFile']['tmp_name'];
+		$filesError = $_FILES['txtFile']['error'];
+		$filesSize	= $_FILES['txtFile']['size'];
+		$status = false;//Biến trạng thái biểu diễn upload thành công hoặc thất bại
+
+		//Kiểm tra trạng thái hợp lệ của các file
+		for($i = 0; $i<count($filesName); $i++){
+			if(($filesType[$i] == "image/jpeg" || $filesType[$i] == "image/png") && $filesSize[$i] <=20000000 && $filesError[$i] == 0){
+				if((move_uploaded_file($filesTmp[$i], "images/".$filesName[$i]))==true){
+					$status = true;
+				}
+			}
+		}
 
 		//Bước 4: Truyền giá trị cho các tham số trong câu truy vấn
 		$stmt->bindParam(1,$_POST['txtName']);
@@ -24,19 +40,25 @@
 		$stmt->bindParam(4,$_POST['txtDesc']);
 		$stmt->bindParam(5,$_POST['cbSupplier']);
 		$stmt->bindParam(6,$_POST['cbCategory']);
+		$stmt->bindParam(7,implode(";", $filesName));
 
 		//Bước 5: Thực thi câu truy vấn
-		if($stmt->execute()==true){
-			//echo "<script>alert('Thêm mới thành công');</script>";
-			header("location:index.php");
-		}else{
-			echo "<div class='alert alert-danger'>Thêm mới thất bại.</div>";
+		
+
+		if($status==true){
+			if($stmt->execute()==true){
+				//echo "<script>alert('Thêm mới thành công');</script>";
+				header("location:index.php");
+			}else{
+				echo "<div class='alert alert-danger'>Thêm mới thất bại.</div>";
+			}
 		}
+		
 	}
 	?>
 	<div class="container">
 		<h3 class="page-header">Thêm mới sản phẩm</h3>
-		<form action="" method="post" enctype="multipart-formdata">
+		<form action="" method="post" enctype="multipart/form-data">
 			<table class="table table-hover table-bordered table-responsive">
 				<tr>
 					<td>Tên sản phẩm</td>
@@ -52,7 +74,7 @@
 				</tr>
 				<tr>
 					<td>Hình ảnh</td>
-					<td><input type="file" name="file" class="form-control" multiple="true"></td>
+					<td><input type="file" name="txtFile[]" class="form-control" multiple="true"></td>
 				</tr>
 				<tr>
 					<td>Mô tả chi tiết</td>
