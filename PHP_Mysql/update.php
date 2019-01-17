@@ -15,7 +15,6 @@
 		$stmt->bindParam(1,$id);
 		$stmt->execute();
 		$count = $stmt->rowCount();
-		$p = 0;
 		if($count>0){
 			$p = $stmt->fetch(PDO::FETCH_ASSOC);
 		}else{
