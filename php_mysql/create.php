@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<?php
@@ -80,6 +81,7 @@
 					<td>Mô tả chi tiết</td>
 					<td>
 						<textarea name="txtDesc" class="form-control"></textarea>
+						<script>CKEDITOR.replace('txtDesc');</script>
 					</td>
 				</tr>
 				<tr>
