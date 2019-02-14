@@ -12,7 +12,7 @@
 <body>
 	<?php
 		require "database.php";
-		$sql = "SELECT * FROM dienthoai,hang_dienthoai";
+		$sql = "SELECT * FROM dienthoai";
 		$stmt = $db -> prepare($sql);
 		$stmt->execute();
 		$count = $stmt->rowCount();
@@ -42,15 +42,25 @@
 					<?php
 						while ($row = $stmt -> fetch(PDO::FETCH_ASSOC)) {
 							//$sql1 = "SELECT ten_hang FROM hang_dienthoai WHERE $row['ma_hang']="
+							$ma_hang = $row['ma_hang'];
+							$sql1 = "SELECT * FROM hang_dienthoai WHERE ma_hang = $ma_hang";
+							$stmt1 = $db -> prepare($sql1);
+							$stmt1->execute();
+							$hang = $stmt1->fetch(PDO::FETCH_ASSOC);
 
 							echo "<tr>";
 								echo "<td>".$row['ten_dienthoai']."</td>";
-								echo "<td>".$row['ten_hang']."</td>";
+								echo "<td>".$hang['ten_hang']."</td>";
 								echo "<td>".$row['mau_sac']."</td>";
 								echo "<td>".$row['gia_dienthoai']."</td>";
 								echo "<td>".$row['mo_ta']."</td>";
 								echo "<td>".$row['ngay_dang']."</td>";
-								echo "<td>".$row['trang_thai']."</td>";
+								if($row['trang_thai'] == 1){
+									echo "<td>Hiện</td>";
+								}else{
+									echo "<td>Ẩn</td>";
+								}
+								
 								echo "<td>".""."</td>";
 							echo "</tr>";
 						}
