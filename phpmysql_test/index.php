@@ -9,7 +9,6 @@
 		<input type="text" name="search">
 		<input type="submit" name="btnSearch" value="Tìm kiếm">
 	</form>
-
 	<?php
 		require "database.php";
 		echo "<table border='1'>";
