@@ -113,6 +113,7 @@
 						$id = $row['ProductID'];
 						echo "<a class='btn btn-success' href='update.php?id=".$row['ProductID']."'>Sửa</a>";
 						echo "<a class='btn btn-danger' href='#' onclick='xoa(".$id.");'>Xóa</a>";
+						echo "<a class='btn btn-default' href='cart.php?id=".$row['ProductID']."'>Thêm vào giỏ</a>";
 					echo "</td>";
 				echo "</tr>";
 			}
