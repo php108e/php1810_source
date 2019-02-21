@@ -20,6 +20,7 @@ if(isset($_GET['id'])){
 	$item = array(
 		//key            = value
 		$row[0]['Modem'] => array(
+			'id'		=> $id,
 			'name' 		=> $row[0]['ProductName'],
 			'price'		=> $row[0]['UnitPrice'],
 			'quantity'	=> $quantity
