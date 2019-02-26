@@ -20,6 +20,7 @@ if(isset($_GET['id'])){
 	$item = array(
 		//key            = value
 		$row[0]['Modem'] => array(
+			'id'		=> $id,
 			'name' 		=> $row[0]['ProductName'],
 			'price'		=> $row[0]['UnitPrice'],
 			'quantity'	=> $quantity
@@ -45,9 +46,41 @@ if(isset($_GET['id'])){
 		$_SESSION['cart'] = $item;
 	}
 
-	echo "<PRE>";
-	print_r($_SESSION['cart']);
-
+	//Bieu dien gio hang ra dinh dang HTML
+	?>
+	<table border="1px">
+		<tr>
+			<th>Ma SP</th>
+			<th>Ten SP</th>
+			<th>Gia</th>
+			<th>So luong</th>
+			<th>Thanh tien</th>
+		</tr>
+		<?php
+		$total = 0;
+		foreach($_SESSION['cart'] as $k => $v){
+		?>
+		<tr>
+			<td><?php echo $k; ?></td>
+			<td><?php echo $v['name']; ?></td>
+			<td><?php echo $v['price']; ?></td>
+			<td><?php echo $v['quantity']; ?></td>
+			<td><?php echo $v['price']*$v['quantity']; ?></td>
+		</tr>
+		<?php
+		$total += $v['price']*$v['quantity'];
+		}
+		?>
+		<tr>
+			<td colspan="4">Tong tien</td>
+			<th><?php echo $total; ?></th>
+		</tr>
+		<tr>
+			<td colspan="3"><a href="index.php">Tiep tuc mua hang</a></td>
+			<td colspan="2"><a href="checkout.php">Dat hang</a></td>
+		</tr>
+	</table>
+	<?php
 
 }else{
 
