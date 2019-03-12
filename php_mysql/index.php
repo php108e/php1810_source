@@ -63,9 +63,7 @@
 								<th>Giá</th>
 								<th>Số lượng nhập kho</th>
 								<th>Chức năng</th>
-
 							</tr>
-
 					<?php
 						while ($row1 = $stmt1->fetch(PDO::FETCH_ASSOC)) {
 							echo "<tr>";
