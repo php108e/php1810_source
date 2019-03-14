@@ -106,10 +106,12 @@
 							<div class="item-product-func">
 								<div class="row">
 									<div class="col-xs-6 btn-add-cart" style="text-align: center;">
-										<button type="button" class="btn btn-default btn-sm form-control item-product-func-cart">
-								        	<span class="glyphicon glyphicon-shopping-cart"></span> 
-								        	<span class="add-cart">Add to Cart</span>
-								        </button>
+										<a href="<?php echo PATH;?>/?controller=cart&action=add&modem=<?php echo $v['modem'];?>">
+											<button type="button" class="btn btn-default btn-sm form-control item-product-func-cart">
+									        	<span class="glyphicon glyphicon-shopping-cart"></span> 
+									        	<span class="add-cart">Add to Cart</span>
+									        </button>
+								    	</a>
 									</div>
 									<div class="col-xs-3 btn-add-wishlist"  style="text-align: center;">
 										<button type="button" class="btn btn-default btn-sm form-control item-product-func-wishlist">

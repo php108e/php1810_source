@@ -1,4 +1,6 @@
 <?php
+//Khoi dong session
+session_start();
 //Goi doi tuong CSDL
 require_once "database.php";
 

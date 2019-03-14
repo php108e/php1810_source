@@ -61,7 +61,7 @@
 						
 						<a href="#" class='bt'>
 							<span class="glyphicon glyphicon-shopping-cart"></span>
-							<span class='txt'>3</span>
+							<span class='txt'><?php echo count($_SESSION['cart']);?></span>
 						</a>
 					</div>
 				</div>
