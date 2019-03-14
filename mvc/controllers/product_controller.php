@@ -20,7 +20,7 @@ class ProductController extends BaseController
 	public function detail(){
 		$id = isset($_GET['id']) ? $_GET['id'] : "";
 
-		$data[] = $id;
+		$data = ProductModel::getProductByModem($id);
 		$this->render("detail",$data);
 	}
 

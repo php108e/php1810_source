@@ -13,7 +13,7 @@ class ProductModel
 		$items = [];
 		$db = DB::getConnection();
 
-		$sql = "SELECT * FROM products";
+		$sql = "SELECT * FROM products LIMIT 0,4";
 		$stmt = $db->prepare($sql);
 		$stmt->execute();
 		$count = $stmt->rowCount();
@@ -24,5 +24,30 @@ class ProductModel
 		}
 		return $items;
 	}
+
+	public static function getProductByModem($id){
+		$db = DB::getConnection();
+		$sql = "SELECT * FROM products WHERE modem=:m";
+		$stmt = $db->prepare($sql);
+		$stmt->bindParam(":m",$id);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		if($count>0){
+			return $stmt->fetch(PDO::FETCH_ASSOC);
+		}
+	}
+
+
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+

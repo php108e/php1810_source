@@ -22,7 +22,7 @@
 						</div>
 						<div class="col-xs-7">
 							<div id="content-product-infor">
-								<h4 style="font-weight: bold;">Product Title Here</h4>
+								<h4 style="font-weight: bold;"><?php echo $data['ProductName'];?></h4>
 								<div class="row" id="content-product-rate">
 									<div>
 										<div class="col-xs-7">
@@ -38,7 +38,7 @@
 													<s>$10000</s>
 												</div>
 												<div class="col-xs-6" style="font-weight: bold; text-align: right; color: #709b1d;">
-													$8000
+													$<?php echo $data['UnitPrice'];?>
 												</div>
 											</div>
 										</div>
@@ -48,7 +48,7 @@
 							<div id="content-product-infor1">
 								<div>Menufacturer: DELL</div>
 								<div>Availability: In stock 20 item(s)</div>
-								<div>Product Code: PC03</div>
+								<div>Product Code: <?php echo $data['modem'];?></div>
 							</div>
 							<div id="content-product-attribute">
 								<h5 style="font-weight: bold;">Product Dimensions and Weight</h5>								
@@ -96,7 +96,7 @@
 						<div class="tab-content">
 						    <div id="home" class="tab-pane fade in active">
 						      <h3>Description</h3>
-						      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						      <p><?php echo $data['Description'];?></p>
 						    </div>
 						    <div id="menu1" class="tab-pane fade">
 						      <h3>Specification</h3>
