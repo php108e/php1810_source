@@ -93,13 +93,16 @@
 		</div>
 		<div class="feature-content">
 			<div class="row">
+				<?php
+				foreach ($data as $k => $v) {
+				?>
 				<div class="col-xs-3">
 					<div class="item-product">
 						<div class="item-product-img">
-							<a href="<?php echo PATH;?>/?controller=product&action=detail&id=1"><img src="assets/images/1.jpg" width="100%" height="230px"></a>
+							<a href="<?php echo PATH;?>/?controller=product&action=detail&id=<?php echo $v['modem'];?>"><img src="assets/images/1.jpg" width="100%" height="230px"></a>
 						</div>
 						<div class="item-product-desc">
-							<div class="item-product-name"><a href="#"> Smart Phone Primo V1</a></div>
+							<div class="item-product-name"><a href="<?php echo PATH;?>/?controller=product&action=detail&id=<?php echo $v['modem'];?>"><?php echo $v['ProductName'];?></a></div>
 							<div class="item-product-func">
 								<div class="row">
 									<div class="col-xs-6 btn-add-cart" style="text-align: center;">
@@ -129,7 +132,7 @@
 										<s>$10000</s>
 									</div>
 									<div class="col-xs-6" style="text-align: left; color: #709b1d;">
-										$8000
+										<?php echo $v['UnitPrice'];?>
 									</div>
 								</div>
 								<div class="item-product-rate">
@@ -147,6 +150,9 @@
 						</div>
 					</div>
 				</div>
+				<?php
+				}
+				?>
 
 			</div>
 		</div>

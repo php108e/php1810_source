@@ -15,6 +15,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="assets/styles/layout.css">
+	<link rel="stylesheet" type="text/css" href="assets/styles/category.css">
+	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
 </head>
 <body>
 	<div id="header" class="container-fluid">
@@ -22,7 +24,7 @@
 			<div id="top-nav-content" class="container">
 				<div class="row">
 					<div class="col-xs-12">
-						<a href="index.html" class="btn btn-danger" style="background-color: #fff; color: #709b1d;border: none; font-weight: bold;">
+						<a href="<?php echo PATH;?>" class="btn btn-danger" style="background-color: #fff; color: #709b1d;border: none; font-weight: bold;">
 							<span class="glyphicon glyphicon-home"></span>
 							Home
 						</a>
@@ -46,7 +48,7 @@
 			<div id="top-nav-logo" class="container">
 				<div class="row">
 					<div class="col-xs-4">
-						<a href="index.html"><img src="assets/images/logo.jpg" alt="electronic"></a>
+						<a href="<?php echo PATH;?>"><img src="assets/images/logo.jpg" alt="electronic"></a>
 					</div>
 					<div class="col-xs-8" style="text-align:right;">
 						<a href="#">LOGIN</a> or

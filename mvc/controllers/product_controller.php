@@ -12,7 +12,9 @@ class ProductController extends BaseController
 	}
 
 	public function index(){
-		$this->render("all");
+		//Tien hanh lay du lieu duoi model 'product'
+		$data = ProductModel::getAllProduct();
+		$this->render("all",$data);
 	}
 
 	public function detail(){
@@ -21,6 +23,6 @@ class ProductController extends BaseController
 		$data[] = $id;
 		$this->render("detail",$data);
 	}
-	
+
 }
 ?>
