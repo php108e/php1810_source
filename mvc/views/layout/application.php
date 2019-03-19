@@ -51,7 +51,7 @@
 						<a href="<?php echo PATH;?>"><img src="assets/images/logo.jpg" alt="electronic"></a>
 					</div>
 					<div class="col-xs-8" style="text-align:right;">
-						<a href="#">LOGIN</a> or
+						<a href="<?php echo PATH.'/?controller=customer&action=login'; ?>">LOGIN</a> or
 						<a href="#">CREATE ACCOUNT</a>
 
 						<a href="#" class='bt'>
@@ -61,7 +61,15 @@
 						
 						<a href="#" class='bt'>
 							<span class="glyphicon glyphicon-shopping-cart"></span>
-							<span class='txt'><?php echo count($_SESSION['cart']);?></span>
+							<span class='txt'>
+								<?php 
+								if(isset($_SESSION['cart'])){
+									echo count($_SESSION['cart']);
+								}else{
+									echo 0;
+								}
+								?>
+							</span>
 						</a>
 					</div>
 				</div>
@@ -80,13 +88,12 @@
 		      <li><a href="#">networking</a></li>
 		      <li><a href="#">software</a></li>
 		    </ul>
-		    <form class="navbar-form navbar-right" action="/action_page.php">
+		    <form class="navbar-form navbar-right" action="<?php echo PATH.'/?controller=product&action=search';?>" method="post">
 		      <div class="form-group">
-		        <input type="text" class="form-control" placeholder="Search your item ..." name="search">
+		        <input type="text" class="form-control" placeholder="Search your item ..." name="txtSearch">
 		      </div>
-		      <button type="submit" class="btn" style="color: #fff; background-color: #709b1d;">
+		      <input type="submit" class="btn" style="color: #fff; background-color: #709b1d;">
 		      	<span class="glyphicon glyphicon-search"></span>
-		      </button>
 		    </form>
 		  </div>
 		</nav><!--end .navbar-->

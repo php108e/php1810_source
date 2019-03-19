@@ -5,7 +5,7 @@ define("PATH", "http://localhost/itplus/php1018e/php1810_source/mvc");
 //Tao mot mang de khai bao cac Controller va Action co trong project
 $controllers = array(
 	'pages'		=> ['home', 'error'],
-	'product'	=> ['index','detail'],
+	'product'	=> ['index','detail','search'],
 	'cart'		=> ['add']
 );
 

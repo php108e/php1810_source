@@ -24,5 +24,22 @@ class ProductController extends BaseController
 		$this->render("detail",$data);
 	}
 
+	public function search(){
+		$searchVal = $_POST['txtSearch'];
+		$data = ProductModel::searchByName($searchVal);
+		$this->render("result",$data);
+	}
+
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+

@@ -38,6 +38,24 @@ class ProductModel
 	}
 
 
+	public static function searchByName($searchVal){
+		$items = [];
+		$db = DB::getConnection();
+
+		$sql = "SELECT * FROM products WHERE ProductName LIKE '%".$searchVal."%'";
+		$stmt = $db->prepare($sql);
+		//$stmt->bindParam(":n", $searchVal);
+		$stmt->execute();
+		$count = $stmt->rowCount();
+		if($count>0){
+			while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+				$items[] = $row;
+			}
+		}
+		return $items;
+	}
+
+
 }
 ?>
 
