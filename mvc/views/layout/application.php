@@ -51,9 +51,19 @@
 						<a href="<?php echo PATH;?>"><img src="assets/images/logo.jpg" alt="electronic"></a>
 					</div>
 					<div class="col-xs-8" style="text-align:right;">
+						<?php
+						if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true){
+						?>
+						Chào mừng: 
+						<?php
+						echo $_SESSION['customer'];
+						}else{
+						?>
 						<a href="<?php echo PATH.'/?controller=customer&action=login'; ?>">LOGIN</a> or
 						<a href="#">CREATE ACCOUNT</a>
-
+						<?php 
+						} 
+						?>
 						<a href="#" class='bt'>
 							<span class="glyphicon glyphicon-edit"></span>
 							<span class='txt'>20</span>

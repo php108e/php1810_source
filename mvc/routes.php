@@ -6,7 +6,8 @@ define("PATH", "http://localhost/itplus/php1018e/php1810_source/mvc");
 $controllers = array(
 	'pages'		=> ['home', 'error'],
 	'product'	=> ['index','detail','search'],
-	'cart'		=> ['add']
+	'cart'		=> ['add'],
+	'customer'	=> ['login','proccess']
 );
 
 //Kiem tra xem 'controller' ma nguoi dung goi tren URL co ton tai trong project hay khong
